@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/ppd_logo_circle.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="stylesheet" href="/css/about/style.css">
+</head>
+<body>
+    <div class="">
+        <%- include('../navbar/navbar.ejs') %>
+    </div>
+    <h1 class="about-main-heading">Personal & Professional Development Courses Faculty</h1>
+    <div class="about-main">
+        <% faculty.forEach(function(obj) { %>
+            <div class="about-card">
+                <img class="about-img" src="<%= obj.image %>" alt="user" />
+                <h3 class="about-name"><%= obj.name %></h3>
+                <p class="about-email"><%= obj.email %></p>
+                <p class="about-course">Course:<br> <%= obj.course %></p>
+                <div class="about-contact">
+                    <a href="<%= obj.website %>" target="_blank">  
+                        <button class="about-contact-primary">Website</button>
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&to=<%=obj.email%>" target="_blank">
+                        <button class="about-contact-primary"> Contact </button>
+                    </a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="about-footer">
+        <%- include('../footer/footer.ejs') %>
+    </div>
+
+
+
+</body>
+</html>

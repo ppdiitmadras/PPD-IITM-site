@@ -1,0 +1,124 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/ppd_logo_circle.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Development</title>
+    <link rel="stylesheet" href="/css/personal/style.css">
+
+</head>
+
+<body>
+    <div class="">
+        <%- include('../navbar/navbar.ejs') %>
+    </div>
+    <div class="section">
+        <div class="content">
+            <h1 class='heading-pers'>Personal Development Courses</h1>
+            <hr class='style14'>
+        </div>
+    </div>
+
+    <div>
+        <div class="main-card-parent">
+            <% personaldata.forEach(function(obj) { %>
+                <div class="animate-card" id="animatedCard_<%= obj.id %>">
+                    <div class="card-temp <%= (obj.id%2) === 0 ? 'even' : 'odd' %> ">
+                        <div class="sq-small"></div>
+                        <div class="sq-med"></div>
+                        <div class="sq-lar"></div>
+                        <div class="rectangle-1">
+                            <a href=" <%= obj.link %>" target="_blank" rel="noopener noreferrer">
+                                <p class="para-desc <%= (obj.id%2) === 0 ? 'even' : 'odd' %>">
+                                    <%= obj.desc %>...
+                                        <span class="view-more">VIEW MORE</span>
+                                </p>
+                            </a>
+                        </div>
+                        <div class="rectangle-2">
+                            <div class="course-name <%= (obj.id%2) === 0 ? 'even' : 'odd' %>">
+                                <%= obj.course_name %>
+                            </div>
+                            <div style="flex: 1;" class="hrstyle16"> <br></div>
+                            <div class="course-no <%= (obj.id%2) === 0 ? 'even' : 'odd' %>">
+                                <%= obj.course_no %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+
+
+    <div class="footer-pers">
+        <%- include('../footer/footer.ejs') %>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var elements = document.querySelectorAll('.animate-card');
+
+            if (window.innerWidth > 1024) {
+                console.log("on PC/Tablet");
+                window.addEventListener('scroll', function () {
+                    elements.forEach(function (element) {
+                        if (isElementInViewport(element)) {
+                            element.classList.add('visible');
+                        } else {
+                            element.classList.remove('visible');
+                        }
+                    });
+                });
+                function isElementInViewport(el) {
+                    var rect = el.getBoundingClientRect();
+                    return (
+                        rect.top >= -100 &&
+                        rect.left >= -50 &&
+                        rect.bottom <= (window.innerHeight + 250 || document.documentElement.clientHeight + 250) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+            }
+            else {
+                console.log("On Mobile");
+                var all_elem = document.querySelectorAll(".card-temp");
+                all_elem.forEach(function (element) {
+                    element.classList.remove("even");
+                });
+
+                window.addEventListener('scroll', function () {
+                    elements.forEach(function (element) {
+                        if (isElementInViewport(element)) {
+                            element.classList.add('visible');
+                        } else {
+
+                            element.classList.remove('visible');
+                        }
+                    });
+                });
+                function isElementInViewport(el) {
+                    var rect = el.getBoundingClientRect();
+                    return (
+                        rect.top >= -150 &&
+                        // rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight + 250 || document.documentElement.clientHeight + 250)
+                        // rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

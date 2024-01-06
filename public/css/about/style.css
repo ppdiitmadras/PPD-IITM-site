@@ -1,0 +1,88 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #e7d7f79d;
+    background-size: 50%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* user-select: none; */
+    -webkit-tap-highlight-color: transparent;  
+}
+.about-main-heading {
+    margin-top: 150px;
+    font-size: 35px;
+    text-align: center;
+    padding: 2px 10px;
+
+}
+
+.about-main{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.about-card {
+    background-color: #231E39;
+    box-shadow: 0 0 20px rgb(32, 32, 32); 
+    border-radius: 20px;
+    color: #B3B8CD;
+    padding: 30px 0;
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    transition: 0.2s;
+}
+.about-card:hover{
+    box-shadow: 0 0 40px rgba(7, 7, 7, 0.8); 
+    transform: scale(0.985);
+}
+.about-name{
+	margin: 10px 0;
+}
+
+
+.about-email, .about-course{
+	font-size: 14px;
+	line-height: 21px;
+}
+
+
+
+.about-card .about-img {
+	border: 1px solid #03BFCB;
+	border-radius: 50%;
+	padding: 7px;
+    width: 150px;
+    height: 150px;
+}
+
+.about-contact a {
+    text-decoration: none;
+    color: hsl(251, 31%, 17%);
+}
+
+.about-contact-primary {
+	background-color: #03BFCB;
+	border: 1px solid #03BFCB;
+	border-radius: 3px;
+	color: #231E39;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+    font-size: 14px;
+	padding: 10px 25px;
+    transition: 0.3s ease-in-out;
+}
+.about-contact-primary:hover {
+    background-color: #231E39;
+    border-color: #03BFCB;
+    color: #03BFCB;
+    cursor: pointer;
+}
+
+.about-footer {
+    margin-top: 50px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/ppd_logo_circle.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | All Blogs</title>
+  <script src="https://kit.fontawesome.com/95a1f26c34.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/blog/style.css">
+  <style>
+    .heading-blog {
+      font-size: 30px;
+    }
+    .delete-blog {
+      margin-top: 20px;
+    }
+    .blog-card:hover{
+      scale: 1;
+    }
+    .delete-btn, .logout-btn, .create-btn {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      padding: 10px;
+      cursor: pointer;
+      background-color: #ff5d5d;
+      border: 1px solid #fe5d5d;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: 0.2s;
+      margin-bottom: 5px;
+    }
+    .delete-btn:hover{
+      background-color: white;
+    }
+    .delete-msg {
+      padding-left: 10px;
+    }
+    .create-btn{
+      font-weight: normal;
+      background-color: #3498db;
+      transition: 0.2s;
+      border: 1px solid #3498db;
+    }
+    .create-btn:hover{
+      background-color: rgba(226, 223, 223, 0.474);
+    }
+    .links {
+      color: #3498db;
+      text-decoration: none;
+      margin: 10px;
+      text-decoration: underline;
+    }
+    .links-div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logout-btn{
+      font-weight: 400;
+      margin-left: 10px;
+    }
+    .logout-btn:hover{
+      background-color: rgba(226, 223, 223, 0.474);
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('../navbar/navbar.ejs') %>
+
+    <h1 class='heading-blog'>Admin Page | All Blogs </h1>
+    <div class="links-div">
+      <a href="/blog/create" class="links"><button type="submit" class="create-btn">Create a Blog</button></a>
+      <form action="/" method="post">
+        <button type="submit" class="logout-btn">Log Out</button>
+      </form>
+    </div>
+
+      <div class="blog-main">
+        <% blogs.forEach((blog, idx)=> { %>
+          <div class="blog-card">
+            <div class="blog-head-desc">
+              <div class="blog-head">
+                <a href="/blog/blogs/<%= blog._id %>">
+                  <%= blog.heading %>
+                </a>
+              </div>
+              <div class="blog-desc" id="content-blog-para">
+                <%= blog.description.slice(0, 100) %>...
+              </div>
+              <div>
+                Created Date: <%= blog.createdOn %>
+              </div>
+              <div class="delete-blog">
+                <form action="/blog/delete" method="post">
+                  <input type="hidden" name="blogId" value="<%= blog._id %>">
+                  <button class="delete-btn"><i class="fa-solid fa-trash"></i> <span class="delete-msg">DELETE BLOG</span></button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% }); %>
+            <!-- <a href="/blog/login">Login</a> -->
+      </div>
+
+
+      <div class="footer-blog">
+        <%- include('../footer/footer.ejs') %>
+      </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* background-color: aliceblue; */
+    background-color: rgba(226, 223, 223, 0.474);
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center
+}
+
+.login-heading {
+    text-align: center;
+}

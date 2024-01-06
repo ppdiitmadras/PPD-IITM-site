@@ -1,0 +1,162 @@
+<div>
+    <div class="separator">
+        <div class="line"></div>
+        <h1>Feedback</h1>
+        <div class="line"></div>
+    </div>
+    <div id="slider-container">
+        <button id="left-button" onclick="prevSlide()">←</button>
+        <div id="slider-card">
+            <% data.forEach(function(obj) { %>
+                <a href="<%= obj.link %>" target="_blank" rel="noopener noreferrer">
+                    <div class="slides">
+                        <div class="upper-portion">
+                            <div class="">
+                                <img src="<%= obj.img %>" alt="" class="feed-img">
+                            </div>
+                            <div class="person-name">
+                                <h2><%= obj.name %>, <br>IIT Madras</h2>
+                            </div>
+                        </div>
+                        <hr class='style-one-2' />
+                        <div class="lower-portion">
+                            <div class="course-feed">
+                                <div class="course-type">Course <%= obj.course %></div>
+                                <%= obj.comment %>
+                                ..<span class="view-more">view more</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            <% }); %>
+
+            <a href="https://padlet.com/play2learniitm/ppd-course-testimonials-h1g8ps4pejb8x1cv" target="_blank" rel="noopener noreferrer">
+                <div class="slides">
+                    <div class="final-slide">
+                        <hr class='style-one-2' />
+                        <h2>Read all Feedbacks here</h2>
+                        <hr class='style-one-2' />
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        <button id="right-button" onclick="nextSlide()">→</button>
+    </div>
+</div>
+
+<style>
+    #slider-container {
+        width: 250px;
+        height: 400px;
+        overflow: hidden;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    #slider-card {
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+        margin: 20px 0;
+    }
+    
+    .slides {
+        box-sizing: border-box;
+        height: 320px;
+        width: 250px;
+        background-color: #43c0c428;
+        /* box-shadow: 5px 5px 15px #08424499; */
+    }
+    .feed-img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+
+    }
+    .person-name{
+        font-size: 13px;
+        margin-left: 10px;
+    }
+    .upper-portion{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+
+    }
+    .style-one-2 {
+        border: 0;
+        height: 2px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+    .lower-portion {
+        padding: 10px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.2rem;
+    }
+    .course-type{
+        font-weight: bold;
+    }
+    .final-slide{
+        font-size: 12px;
+        padding: 10px;
+        
+    }
+    .final-slide h2{
+        color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+
+
+
+
+    #left-button,
+    #right-button {
+        position: absolute;
+        top: 78%;
+        transform: translateY(-50%);
+        font-size: 35px;
+        cursor: pointer;
+        color: black;
+        
+        background-color: #43c0c406;
+        border: none;
+        padding: 10px;
+    }
+
+    #left-button {
+        left: 0;
+    }
+
+    #right-button {
+        right: 0;
+    }
+</style>
+
+
+<script>
+    let currentSlide = 0;
+    const totalSlides = document.querySelectorAll('.slides').length;
+
+    function updateSlider() {
+        const slider = document.getElementById('slider-card');
+        const slideWidth = document.querySelector('.slides').offsetWidth;
+        slider.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= blog.heading %></title>
+  <link rel="stylesheet" href="/css/blog/particularblog.css">
+
+</head>
+<body>
+  <%- include('../navbar/navbar.ejs') %>
+
+
+  <h1><%= blog.heading %></h1>
+  <p>Uploaded on: <%= blog.createdOn %></p>
+  <p><%= blog.description %></p>
+
+
+
+</body>
+</html>

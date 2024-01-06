@@ -1,0 +1,263 @@
+<div class='wrapper'>
+    <div class="slider">
+        <div class="separator">
+            <div class="line"></div>
+            <h1>Feedback</h1>
+            <div class="line"></div>
+        </div>
+
+        <div class="slide-track">
+            <% data.forEach(function(obj) { %>
+                <a href="<%= obj.link %>" target="_blank" rel="noopener noreferrer">
+                    <div class="slide">
+                        <div class="upper-part">
+                            <img src="<%= obj.img %>" alt="" class="" />
+                            <h2 class="">
+                                <%= obj.name %>,<br />IIT Madras
+                            </h2>
+                        </div>
+                        <hr class='style-one' />
+                        <div class="comment">
+                            <b>Course <%= obj.course %></b><br />
+                            <%= obj.comment %>..<span>view more</span>
+                        </div>
+                </a>
+            </div>
+        <% }); %>
+
+
+            <div class="slide slide-final">
+                <a href="https://padlet.com/play2learniitm/ppd-course-testimonials-h1g8ps4pejb8x1cv" target="_blank"
+                    rel="noopener noreferrer">
+                    <hr class='style-one' />
+                    <div class="comment-final">
+                        <b>Read all feebacks here</b>
+                    </div>
+                    <hr class='style-one' />
+                </a>
+            </div>
+    </div>
+</div>
+</div>
+
+<style>
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .slider {
+        height: 600px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 80%;
+    }
+
+    .slider .slide-track {
+        -webkit-animation: scroll 30s linear infinite;
+        animation: scroll 30s linear infinite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(250px * 20);
+    }
+
+    .slider .slide {
+        height: 350px;
+        width: 500px;
+        background-color: #43c0c428;
+        padding: 10px 20px 20px 10px;
+        margin: auto 40px;
+        box-shadow: 5px 5px 10px #08424499;
+    }
+
+    .slider .slide-track:hover {
+        animation-play-state: paused;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    span {
+        color: red;
+        font-size: 13px;
+        font-weight: bold;
+    }
+
+    .upper-part {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .upper-part img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        box-shadow: 5px 5px 5px #08424499;
+    }
+
+    .upper-part h2 {
+        margin-left: 10px;
+        color: #084244;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .slide .comment {
+        margin: 20px 0;
+        font-size: 15px;
+        line-height: 1.4rem;
+        text-align: center;
+    }
+
+    .separator {
+        display: flex;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 20px;
+        background: linear-gradient(to right, black, #14ccd2);
+        -webkit-background-clip: text;
+        color: transparent;
+        background-clip: text;
+    }
+
+    .separator h1 {
+        padding: 0 2rem;
+        text-align: center;
+        font-size: 50px;
+    }
+
+    .separator .line {
+        flex: 1;
+        height: 2px;
+        background-color: #000;
+        text-align: center;
+    }
+
+    .comment-final {
+        color: red;
+    }
+
+    hr.style-one {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    .slide-final {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @-webkit-keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-250px * 20));
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-250px * 20));
+        }
+    }
+
+
+
+
+
+
+    @media only screen and (max-width: 1024px) {
+        .slider {
+            height: 450px;
+            margin: 0 50px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .slider .upper-part img {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .upper-part h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            font-size: 16px;
+        }
+
+        .slider .slide {
+            height: 300px;
+            width: 250px;
+            padding: 0;
+            margin: 0;
+            margin: 20px auto;
+        }
+
+        .slide .comment {
+            margin: 0;
+            padding: 0 10px;
+            font-size: 13px;
+            line-height: 1.4rem;
+            text-align: center;
+        }
+
+        .separator {
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .separator h1 {
+            padding: 0 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .slider .slide-track {
+            width: calc(200px * 20);
+            /* animation-play-state: paused; */
+        }
+
+        @-webkit-keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 14));
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 14));
+            }
+        }
+    }
+</style>

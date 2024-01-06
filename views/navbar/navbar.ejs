@@ -1,0 +1,253 @@
+
+<div class="navbar">
+    <div class="navbar-left">
+        <a href="https://www.ppdiitm.com/"><img src="/images/ppd_logo.png" alt="Left Image 1"></a>
+    </div>
+
+
+    <div class="navbar-links" id="navbar-links">
+        <a href="/" class="underbar-link">HOME</a>
+        <a href="/personal" class="underbar-link">PERSONAL DEVELOPMENT</a>
+        <a href="/professional" class="underbar-link">PROFESSIONAL DEVELOPMENT</a>
+        <a href="/blog" class="underbar-link">BLOG</a>
+        <a href="/media" class="underbar-link">MEDIA</a>
+        <a href="/about" class="underbar-link">ABOUT US</a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="navbar-right">
+        <a href="https://www.iitm.ac.in/" target="_blank" rel="noopener noreferrer"><img src="/images/iitmlogo.png"
+                alt="Right Image 1"></a>
+    </div>
+</div>
+
+<style>
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 0;
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
+        color: black;
+        font-size: 16px;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+    }
+    
+    .navbar img {
+        max-width: 60px;
+        border-radius: 50%;
+    }
+
+    .navbar-links {
+        display: flex;
+    }
+
+    .navbar-links a {
+        color: black;
+        text-decoration: none;
+        margin: 0 25px;
+        padding: 10px 0;
+    }
+
+    .underbar-link {
+        margin: 0 30px;
+        padding: 10px 0;
+        background: linear-gradient(currentColor 0 0) bottom /var(--d, 0) 3px no-repeat;
+        transition: 0.3s;
+    }
+
+    .underbar-link:hover,
+    .active-link {
+        color: black;
+        cursor: pointer;
+        --d: 50%;
+        outline: none;
+    }
+
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    .hamburger:focus, .hamburger:active{
+        outline: none;
+    }
+    .hamburger {
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    
+    .bar {
+        width: 30px;
+        height: 2px;
+        background-color: black;
+        margin: 3px 0;
+    }
+    .bar:focus{
+        outline: none;
+    }
+    .navbar a{
+        outline: none;
+    }
+    
+    @media only screen and (max-width: 1255px) {
+        .navbar-links a {
+            margin: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 1024px) {
+        .navbar-links {
+            display: none;
+            flex-direction: column;
+            background-color: white;
+            position: absolute;
+            top: 90px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            box-shadow: 0 4px 2px -2px rgba(0, 0, 0, .2);
+            
+        }
+        
+        .navbar-links.show {
+            display: flex;
+            text-align: center;
+        }
+
+        .navbar-links a {
+            margin: 0px 200px;
+            color: black;
+            border-bottom: 1px solid rgba(46, 45, 45, 0.416);
+            /* width: 30% */
+        }
+
+        .hamburger {
+            padding: 20px 50px;
+            display: flex;
+            user-select: none;
+        }
+        .hamburger:focus{
+            outline: none;
+        }
+        
+        .navbar-links.open {
+            display: flex;
+        }
+
+        /* Animation effect */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                width: 200px;
+                /* Set the desired width */
+            }
+
+            to {
+                width: 0;
+            }
+        }
+        
+    }
+    
+
+    @media only screen and (max-width: 468px) {
+        .navbar-links a {
+            margin: 0 120px;
+        }
+
+        .underbar-link:hover, .active-link {
+            --d: 100%;
+        }
+        .hamburger:focus, .hamburger:active{
+        outline: none;
+    }
+    }
+</style>
+
+
+<script>
+    // ----------------------------navbar hamburger------------------------------------
+    document.addEventListener('DOMContentLoaded', function () {
+        const navbarLinks = document.getElementById('navbar-links');
+        const hamburger = document.getElementById('hamburger');
+
+        hamburger.addEventListener('click', function (event) {
+            event.stopPropagation(); // Prevents the click event from propagating to the document
+            navbarLinks.classList.toggle('show');
+        });
+
+        document.addEventListener('click', function (event) {
+            const isClickInsideNavbar = navbarLinks.contains(event.target);
+            const isClickOnHamburger = hamburger.contains(event.target);
+
+            // If the click is outside the navbarLinks and hamburger, close the menu
+            if (!isClickInsideNavbar && !isClickOnHamburger) {
+                navbarLinks.classList.remove('show');
+            }
+        });
+    });
+    // -------------animation
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.getElementById('hamburger');
+        const navbarLinks = document.getElementById('navbar-links');
+
+        function toggleNavbar() {
+            navbarLinks.classList.toggle('open');
+            if (navbarLinks.classList.contains('open')) {
+                navbarLinks.style.animation = 'slideIn 0.5s ease-in-out';
+            } else {
+                navbarLinks.style.animation = 'slideOut 0.5s ease-in-out';
+            }
+        }
+
+        hamburger.addEventListener('click', toggleNavbar);
+
+        document.addEventListener('click', function (event) {
+            const isClickInsideNavbar = navbarLinks.contains(event.target) || hamburger.contains(event.target);
+            if (!isClickInsideNavbar && navbarLinks.classList.contains('open')) {
+                toggleNavbar();
+            }
+        });
+
+        // Listen for the end of the animation and remove the animation styles
+        navbarLinks.addEventListener('animationend', function () {
+            navbarLinks.style.animation = '';
+        });
+    });
+
+
+
+
+    // --------------------------- active link -----------------------------------
+    document.addEventListener('DOMContentLoaded', function () {
+        var currentPath = window.location.pathname;
+        var links = document.querySelectorAll('.navbar-links a');
+
+        links.forEach(function (link) {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active-link');
+            }
+        });
+    });
+
+</script>

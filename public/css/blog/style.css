@@ -1,0 +1,148 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* background-color: aliceblue; */
+  background-color: rgba(226, 223, 223, 0.474);
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.heading-blog {
+  margin-top: 120px;
+  font-size: 70px;
+  text-align: center;
+  color: black;
+  animation: fadeInFromCenter 1s ease-in-out;
+  animation-fill-mode: both;
+}
+hr.style14 {
+  border: 0;
+  height: 5px;
+  width: 20%;
+  margin-top: -40px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
+  animation: fadeInFromCenter 1s ease-in-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInFromCenter {
+  0% {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+
+.blog-main {
+  margin-top: 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+.blog-card{
+  display: flex;
+  margin: 50px auto;
+  align-self: center;
+  width: 80%;
+  height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(172, 170, 170, 0.633);
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
+}
+.blog-card:hover{
+  cursor: pointer;
+  scale: 1.02;
+}
+.blog-card img{
+  height: 100%;
+  width: 300px;
+  max-height: 100%;
+  object-fit: cover;
+}
+.redirect-link{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.blog-head-desc {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  text-align: left;
+}
+.blog-head{
+  margin-top: 10px;
+  padding-right: 10px;
+  font-size: 30px;
+  color: black;
+  font-weight: 600;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+.blog-date{
+  margin-top: 10px;
+}
+.blog-desc {
+  margin-top: 10px;
+  overflow: hidden;
+  word-wrap: break-word;
+  color: grey;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .blog-card{
+    width: 90%;
+  }
+  .blog-card{
+    width: 90%;
+  }
+  .blog-head{
+    font-size: 25px;
+  }
+}
+
+
+
+
+
+@media only screen and (max-width: 468px) {
+  .blog-card{
+    flex-direction: column;
+    width: 90%;
+    height: fit-content;
+  }
+  .blog-card img{
+    height: 100%;
+    width: 100%;
+  }
+  .blog-head-desc {
+    margin: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    text-align: left;
+  }
+}
+
+
+
+.footer-blog {
+  margin-top: 40px;
+}
+

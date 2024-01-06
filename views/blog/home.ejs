@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/ppd_logo_circle.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Page</title>
+  <link rel="stylesheet" href="/css/blog/style.css">
+</head>
+
+<body>
+  <%- include('../navbar/navbar.ejs') %>
+
+    <h1 class='heading-blog'>Blogs </h1>
+    <hr class='style14'>
+
+    <% const blogImages=[ "/images/blog_img.jpg" , "/images/blog_img2.jpg" , "/images/blog_img3.jpg"
+      , "/images/blog_img4.jpg" , ]; %>
+      <div class="blog-main">
+        <% blogs.forEach((blog, idx)=> { %>
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="<%= blogImages[idx%4] %>" alt="" class="logo-hover" />
+            </div>
+            <a href="/blog/blogs/<%= blog._id %>" class="redirect-link">
+              <div class="blog-head-desc">
+                <div class="blog-head">
+                  <%= blog.heading %>
+                </div>
+                <div class="blog-date">
+                  <%= blog.createdOn %>
+                </div>
+                <div class="blog-desc" id="content-blog-para">
+                  <%= blog.description.slice(0, 100) %>...
+                </div>
+              </div>
+            </a>
+          </div>
+          <% }); %>
+            <!-- <a href="/blog/login">Login</a> -->
+      </div>
+
+
+      <div class="footer-blog">
+        <%- include('../footer/footer.ejs') %>
+      </div>
+
+
+</body>
+
+</html>

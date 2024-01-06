@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/images/ppd_logo_circle.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Login</title>
+  <style>
+    body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgba(226, 223, 223, 0.474);
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center
+}
+    header .header {
+      background-color: #fff;
+      height: 45px;
+    }
+
+    header a img {
+      width: 134px;
+      margin-top: 4px;
+    }
+
+    .login-page {
+      width: 350px;
+      padding: 8% 0 0;
+      margin: auto;
+    }
+
+    .login-page .form .login {
+      margin-top: -31px;
+      margin-bottom: 26px;
+    }
+
+    .form {
+      position: relative;
+      z-index: 1;
+      background: #FFFFFF;
+      max-width: 360px;
+      margin: 0 auto 100px;
+      padding: 45px;
+      text-align: center;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+    .form input {
+      outline: 0;
+      background: #f2f2f2;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+
+    .form button {
+      outline: 0;
+      background-color: #4596dd;
+      width: 100%;
+      border: 1px solid #398fdb;
+      padding: 15px;
+      color: #FFFFFF;
+      font-size: 14px;
+      -webkit-transition: all 0.3 ease;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .form button:hover {
+      background-color: #2f74af;
+    }
+
+    .form .message {
+      margin: 15px 0 0;
+      color: #b3b3b3;
+      font-size: 12px;
+    }
+
+    .form .message a {
+      color: #398fdb;
+      text-decoration: none;
+    }
+
+
+    body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background-color: aliceblue;
+
+    }
+
+    @media only screen and (max-width: 1024px) {
+      .login-page {
+        margin-top: 100px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+      <div class="login">
+        <div class="login-header">
+          <h3>LOGIN</h3>
+          <p>Please enter the credentials to post blog</p>
+        </div>
+      </div>
+      <form action="/blog/login" method="post" class="login-form">
+        <input type="text" id="username" name="username" placeholder="Username" required />
+        <input type="password" id="password" name="password" placeholder="Password" required />
+        <button type="submit" class="submit-blog">Login</button>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

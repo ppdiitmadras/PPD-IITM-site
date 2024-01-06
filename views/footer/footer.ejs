@@ -1,0 +1,230 @@
+<script src="https://kit.fontawesome.com/95a1f26c34.js" crossorigin="anonymous"></script>
+<div class="sixth-section">
+    <div class='last-footer'>
+        <div class="footer1" id="foot1">
+            <img src="/images/ppd_logo.png" alt="" class="logo" />
+            <p class="ppd-para">
+                <b>Personal & Professional Development, IIT Madras</b> <br />
+                <i class="fa-solid fa-link"></i> Connect with us:  
+                    <a href="https://www.linkedin.com/company/personal-professional-development-iit-madras/" target="_blank"
+                        rel="noopener noreferrer" class='linkedin-link'>
+                        <img src="/images/linkedin2.png" alt="" class="linkedin-logo"> 
+                    </a><br> <br>
+            </p>
+        </div>
+
+        <div class="footer3" id="foot3">
+            <p class="">
+                <b>Indian Institute of Technology Madras</b> <br />
+                <i class="fa-sharp fa-solid fa-map-pin fa-bounce"></i>  Chennai, Tamil Nadu-600036<br />
+                <i class="fa-solid fa-globe"></i> Website:
+                <a href="https://www.iitm.ac.in/" target="_blank" rel="noopener noreferrer" class='iitm-link'>
+                    www.iitm.ac.in</a>
+            </p>
+            <img src="/images/iitmlogo.png" alt="" class="logo" />
+        </div>
+    </div>
+    <hr class='style-two' />
+    <div class='creator-info'>
+        <% const year=new Date().getFullYear(); %>
+            © <%= year %>, For any queries regarding this site, contact:<br /><i class="fa-solid fa-user"></i> <b>Aman Singh</b> |
+            <i class="fa-solid fa-envelope" style="font-size: 12px;"></i> <b> amankrj12345@gmail.com</b> |
+            <i class="fa-solid fa-phone" style="font-size: 10px;"></i> <b>+91 8868857492</b>
+    </div>
+</div>
+
+
+<style>
+    .sixth-section {
+        background-color: #4cadae3b;
+    }
+
+    .last-footer {
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        height: 13rem;
+        text-align: center;
+        margin: auto 0;
+        width: 100%;
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        margin: auto 0;
+        border-radius: 50%;
+    }
+
+    a {
+        text-decoration: none;
+
+    }
+
+    .active-link {
+        font-weight: bold;
+    }
+
+    .footer1,
+    .footer3 {
+        display: flex;
+        justify-content: space-between;
+        margin: auto 20px;
+    }
+
+    .footer1 p,
+    .footer3 p {
+        letter-spacing: 0.5px;
+        margin: auto 50px;
+        line-height: 3rem;
+        text-align: left;
+    }
+
+    .footer3 p,
+    .footer1 p {
+        line-height: 2rem;
+        text-align: right;
+    }
+    
+    .footer1 p {
+        text-align: left;
+    }
+
+    .linkedin-link,
+    .iitm-link {
+        text-decoration: none;
+        margin-left: 20px;
+        color: black;
+        transition: 0.2s;
+    }
+    
+    .iitm-link {
+        /* text-decoration: underline; */
+        color: rgb(14, 129, 210)
+    }
+    .iitm-link:hover{
+        color: black
+    }
+
+    .linkedin-link:hover{
+        color: #25a9ae;
+    }
+    .linkedin-link {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        
+    }
+    .linkedin-logo{
+        width: 70px;
+        height: 20px;
+        margin-bottom: -4px;
+    }
+
+
+
+    .creator-info {
+        font-size: 13px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    hr.style-two {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+
+
+
+    @media only screen and (max-width: 1024px) {
+        .last-footer {
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+        }
+
+        #foot2 {
+            order: 3;
+        }
+
+        #foot3 {
+            order: 2;
+        }
+
+        .last-footer .logo {
+            width: 70px;
+            height: 70px;
+            margin: auto 0;
+            border-radius: 50%;
+        }
+
+        .footer1,
+        .footer3 {
+            margin: 0;
+            margin-top: 20px;
+            padding: 10px;
+        }
+
+        .footer1 p,
+        .footer3 p {
+            letter-spacing: 0.5px;
+            margin: 5px;
+            width: 100%;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        .footer1 p{
+            margin-left: 15px;
+        }
+        .footer3 p{
+            margin-right: 15px;
+        }
+
+        .linkedin-link,
+        .iitm-link {
+            margin-left: 5px;
+        }
+
+
+
+        .creator-info {
+            font-size: 10px;
+
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+        .footer1,
+        .footer3 {
+            margin: auto;
+        }
+
+
+
+        .creator-info {
+            font-size: 13px;
+        }
+    }
+</style>
+
+
+<script>
+    // ---------------------active link
+    document.addEventListener('DOMContentLoaded', function () {
+        var currentPath = window.location.pathname;
+        var links = document.querySelectorAll('.nav-menu a');
+
+        links.forEach(function (link) {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active-link');
+            }
+        });
+    });
+</script>

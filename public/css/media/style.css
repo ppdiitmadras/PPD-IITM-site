@@ -1,0 +1,228 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #fff4f7e0;
+    background-size: 50%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;  
+}
+.videos {
+    margin-top: 150px;
+}
+
+.award-video-heading {
+    text-align: center;
+}
+.award-video-parent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.award-video {
+    width: 540px;
+    background-color: white;
+    border-radius: 20px; 
+    box-shadow: 5px 5px 10px rgb(171, 168, 168);
+    position: relative;
+    margin: auto; 
+}
+.video-back-text {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    font-size: 25px;
+    color: rgb(180, 180, 180);
+    z-index: 1;
+    text-align: center;
+}
+.award-video iframe {
+    position: relative;
+    margin: 20px;
+    margin-top: 0px;
+    height: 280px;
+    width: 500px;
+    border-radius: 10px;
+    border: none;
+    z-index: 2;
+    align-items: center;
+}
+.video-tag {
+    font-size: 25px;
+    text-align: left;
+    padding: 2px 20px;
+}
+/* ---------------------------------- */
+.main-ppd {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-ppd-video{
+    background-color: white;
+    border-radius: 20px; 
+    box-shadow: 5px 5px 10px rgb(171, 168, 168);
+    width: 740px;
+}
+.main-ppd iframe{
+    margin: 20px;
+    margin-top: 0;
+    height: 400px;
+    width: 700px;
+    border-radius: 10px;
+    border: none;
+    z-index: 2;
+}
+.video-tag2 {
+    font-size: 20px;
+    text-align: left;
+    padding: 2px 20px;
+}
+/* --------------------- */
+.course{
+    margin-top: 80px;
+}
+.course-video-heading{
+    text-align: center;
+}
+.course-video-parent{
+    display: grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap: 20px;
+    place-items: center;
+}
+.course-video{
+    width: 540px;
+    height: 400px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgb(171, 168, 168);
+    position: relative;
+    margin: 20px auto;
+}
+.video-back-text2 {
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    font-size: 25px;
+    color: rgb(180, 180, 180);
+    z-index: 1;
+    text-align: center;
+}
+.course-video iframe{
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin: 20px;
+    margin-top: 0;
+    border-radius: 10px;
+    border: none;
+    z-index: 2;
+}
+.video-tag3{
+    font-size: 25px;
+    text-align: left;
+    padding: 2px 20px;
+}
+.media-footer{
+    margin-top: 50px;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .award-video-parent {
+        display: flex;
+        flex-direction: column;
+    }
+    .award-video{
+        margin: 30px auto;
+    }
+    .course-video-parent{
+        display: grid;
+        grid-template-columns:repeat(1, 1fr);
+        gap: 20px;
+        place-items: center;
+    }
+
+}
+@media only screen and (max-width: 468px) {
+    .award-video {
+        width: calc(85% + 20px);
+        height: calc(120% + 20px);
+        background-color: white;
+        border-radius: 20px; 
+        margin-top: 20px;
+    }
+    .award-video iframe {
+
+        margin: 10px;
+        margin-top: 0px;
+        width: calc(100% - 20px);
+        height: 120%;
+        border-radius: 15px;
+    }
+    .video-back-text {
+        top: 50%;
+        font-size: 15px;
+    }
+    /* ------------- */
+    .main-ppd {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-ppd-video{
+        background-color: white;
+        border-radius: 20px; 
+        width: calc(85% + 20px);
+        height: calc(120% + 20px);
+    }
+    .main-ppd iframe{
+        margin: 10px;
+        margin-top: 0;
+        width: calc(100% - 20px);
+        height: 120%;
+        border-radius: 15px;
+    }
+    .video-tag2 {
+        font-size: 20px;
+        text-align: left;
+        padding: 2px 20px;
+    }
+    /* --------------------- */
+    .course-video-parent{
+        grid-template-columns:repeat(1, 1fr);
+        gap: 20px;
+    }
+    .course-video{
+        margin: 20px auto;
+        width: calc(85% + 20px);
+        height: 340px;
+    }
+    .course-video iframe{
+        margin: 10px;
+        position: relative;
+        width: calc(100% - 20px);
+        height: 200px;
+        border-radius: 15px;
+        z-index: 2;
+    }
+    .video-back-text2 {
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        font-size: 15px;
+    
+    }
+    .course-video-heading, .award-video-heading{
+        padding: 5px 10px;
+        font-size: 25px;
+    }
+
+}
+
+
